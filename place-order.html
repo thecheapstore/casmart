@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Place Order</title>
+  <title>OptiPharmacy - Place Order</title>
   <style>
     /* Styling for the page */
     body {
@@ -37,7 +37,8 @@
     /* Input fields */
     .form-container input[type="text"],
     .form-container input[type="integer"],
-    .form-container input[type="email"] {
+    .form-container input[type="email"],
+    .form-container select {
       width: 100%;
       padding: 0.8rem;
       border: 1px solid #ddd;
@@ -46,7 +47,8 @@
       color: #333;
     }
     /* Focus effect on input fields */
-    .form-container input:focus {
+    .form-container input:focus,
+    .form-container select:focus {
       border-color: #4CAF50;
       outline: none;
       box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
@@ -90,13 +92,21 @@
         <label>Address <input type="text" name="address" /></label>
       </p>
       <p>
-        <label>Preferred Payment Method <input type="text" name="payment" /></label>
+        <label>Preferred Payment Method 
+          <select name="payment">
+            <option value="Debit Card">Debit Card</option>
+            <option value="Credit Card">Credit Card</option>
+            <option value="PayPal">PayPal</option>
+            <option value="UPI">UPI (Google Pay)</option>
+            <option value="Other">Other</option>
+          </select>
+        </label>
       </p>
       <p>
         <label>Email <input type="email" name="email" /></label>
       </p>
       <p>
-        <button type="submit">Send</button>
+        <button type="submit">Place Order</button>
       </p>
     </form>
   </div>
