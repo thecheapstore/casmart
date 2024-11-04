@@ -19,11 +19,9 @@ Search
 
 <ion-icon name="cart-outline" aria-hidden="true"></ion-icon>
 Cart
-3
 
 <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
 Wishlisht
-2
 
 aria-label = Open Menu
 
