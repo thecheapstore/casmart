@@ -1,8 +1,89 @@
-<form name="contact" netlify>
-    <p>
-      <label>Name <input type="text" name="name" /></label>
-    </p>
-    <p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form</title>
+  <style>
+    /* Styling for the page */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f6f8;
+      font-family: Arial, sans-serif;
+    }
+    /* Container for the form */
+    .form-container {
+      background-color: #ffffff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+    /* Form title */
+    .form-container h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 1.5rem;
+    }
+    /* Styling for each form group */
+    .form-container p {
+      margin-bottom: 1rem;
+    }
+    /* Input fields */
+    .form-container input[type="text"],
+    .form-container input[type="integer"],
+    .form-container input[type="email"] {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+      color: #333;
+    }
+    /* Focus effect on input fields */
+    .form-container input:focus {
+      border-color: #4CAF50;
+      outline: none;
+      box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+    }
+    /* Button styling */
+    .form-container button[type="submit"] {
+      width: 100%;
+      padding: 0.8rem;
+      background-color: #4CAF50;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .form-container button[type="submit"]:hover {
+      background-color: #45a049;
+    }
+    /* Label styling */
+    .form-container label {
+      font-weight: bold;
+      color: #555;
+      margin-bottom: 0.3rem;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Contact Us</h2>
+    <form name="contact" netlify action="success.html">
+      <p>
+        <label>Name <input type="text" name="name" /></label>
+      </p>
+      <p>
         <label>Contact <input type="integer" name="number" /></label>
       </p>
       <p>
@@ -11,10 +92,14 @@
       <p>
         <label>Preferred Payment Method <input type="text" name="payment" /></label>
       </p>
-    <p>
-      <label>Email <input type="email" name="email" /></label>
-    </p>
-    <p>
-      <button type="submit">Send</button>
-    </p>
-  </form>
+      <p>
+        <label>Email <input type="email" name="email" /></label>
+      </p>
+      <p>
+        <button type="submit">Send</button>
+      </p>
+    </form>
+  </div>
+
+</body>
+</html>
