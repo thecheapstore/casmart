@@ -9,9 +9,9 @@
     body {
       display: flex;
       justify-content: center;
-      align-items: center;
-      height: 100vh;
+      align-items: flex-start; /* Change this to flex-start */
       margin: 0;
+      padding: 2rem; /* Add padding to prevent content from touching the edges */
       background-color: #f4f6f8;
       font-family: Arial, sans-serif;
     }
@@ -108,12 +108,12 @@
       <p>
         <label>Package
           <select name="package">
-            <option value="pills">60 Pills</option>
-            <option value="pills">90 Pills</option>
-            <option value="pills">120 Pills</option>
-            <option value="pills">180 Pills</option>
-            <option value="pills">240 Pills</option>
-            <option value="pills">300 Pills</option>
+            <option value="60">60 Pills</option>
+            <option value="90">90 Pills</option>
+            <option value="120">120 Pills</option>
+            <option value="180">180 Pills</option>
+            <option value="240">240 Pills</option>
+            <option value="300">300 Pills</option>
           </select>
         </label>
       </p>
