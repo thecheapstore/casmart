@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Page - Medicine</title>
-  <style>
-    /* Page styling */
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 2rem;
-      background-color: #f4f6f8;
-      font-family: Arial, sans-serif;
-      color: #333;
-      margin: 0;
-    }
+  <title>Opti Pharmacy - Product Page</title>
 
-    /* Container for the product page */
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- custom css link -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- google font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Product page specific styling */
     .product-container {
       display: flex;
       background-color: #ffffff;
@@ -26,26 +28,14 @@
       padding: 2rem;
       max-width: 800px;
       width: 100%;
+      margin: 2rem auto;
       gap: 2rem;
-    }
-
-    /* Image container styling */
-    .product-image {
-      flex: 1;
-      max-width: 300px;
-      border-radius: 8px;
-      overflow: hidden;
     }
 
     .product-image img {
       width: 100%;
       height: auto;
       border-radius: 8px;
-    }
-
-    /* Product details styling */
-    .product-details {
-      flex: 2;
     }
 
     .product-details h1 {
@@ -60,16 +50,8 @@
       margin-top: 0.5rem;
     }
 
-    /* Dropdown and price styling */
     .dropdown-container {
       margin: 1rem 0;
-    }
-
-    .dropdown-label {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-      display: block;
-      color: #333;
     }
 
     .package-select {
@@ -81,7 +63,6 @@
       outline: none;
     }
 
-    /* Price styling */
     .product-price {
       font-size: 1.2rem;
       font-weight: bold;
@@ -89,9 +70,7 @@
       margin: 1rem 0;
     }
 
-    /* Button styling */
     .order-button {
-      display: inline-block;
       padding: 0.8rem 2rem;
       font-size: 1rem;
       background-color: #4CAF50;
@@ -107,17 +86,11 @@
       background-color: #45a049;
     }
 
-    /* Meta information styling */
     .meta-info {
       font-size: 0.9rem;
       color: #666;
       line-height: 1.6;
       margin-top: 1rem;
-    }
-
-    /* Additional information styling */
-    .additional-info {
-      margin-top: 1.5rem;
     }
 
     .additional-info h3 {
@@ -133,12 +106,63 @@
     }
   </style>
 </head>
+
 <body>
 
+  <!-- HEADER -->
+  <header class="header" data-header>
+    <div class="container">
+      <div class="overlay" data-overlay></div>
+
+      <div class="header-search">
+        <input type="search" name="search" placeholder="Search Product..." class="input-field">
+        <button class="search-btn" aria-label="Search">
+          <ion-icon name="search-outline"></ion-icon>
+        </button>
+      </div>
+
+      <a href="index.html" class="logo">
+        <img src="./assets/images/Opti.png" alt="OptiPharmacy logo" width="130" height="31">
+      </a>
+
+      <div class="header-actions">
+        <button class="header-action-btn">
+          <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+          <a href="sign-up.html">
+            <p class="header-action-label">Sign in</p>
+          </a>
+        </button>
+
+        <button class="header-action-btn">
+          <ion-icon name="cart-outline" aria-hidden="true"></ion-icon>
+          <p class="header-action-label">Cart</p>
+          <div class="btn-badge green" aria-hidden="true">0</div>
+        </button>
+
+        <button class="header-action-btn">
+          <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+          <p class="header-action-label">Wishlist</p>
+          <div class="btn-badge" aria-hidden="true">0</div>
+        </button>
+      </div>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li><a href="index.html" class="navbar-link">Home</a></li>
+          <li><a href="#" class="navbar-link">Shop</a></li>
+          <li><a href="#" class="navbar-link">About</a></li>
+          <li><a href="#" class="navbar-link">Blog</a></li>
+          <li><a href="#" class="navbar-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PRODUCT SECTION -->
   <div class="product-container">
     <!-- Product Image -->
     <div class="product-image">
-      <img src="medicine-image.jpg" alt="Medicine Image">
+      <img src="https://t4.ftcdn.net/jpg/05/25/69/93/360_F_525699313_ksNjBKmSFCeRxt3Rl0BkYlc2rOoi6Z9y.jpg" alt="Medicine Image">
     </div>
 
     <!-- Product Details -->
@@ -148,7 +172,7 @@
 
       <!-- Package Dropdown -->
       <div class="dropdown-container">
-        <label class="dropdown-label" for="package-select">Select Package:</label>
+        <label for="package-select">Select Package:</label>
         <select id="package-select" class="package-select">
           <option value="60">60 Pills</option>
           <option value="90">90 Pills</option>
