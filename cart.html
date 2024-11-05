@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart - Opti Pharmacy</title>
+  <style>
+    /* Centering and page styling */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f6f8;
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+    /* Container for the empty cart message */
+    .empty-container {
+      background-color: #ffffff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
+    }
+    /* Title styling */
+    .empty-container h2 {
+      color: #ff6f61;
+      margin-bottom: 1rem;
+    }
+    /* Message styling */
+    .empty-container p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      margin-bottom: 2rem;
+    }
+    /* Button styling */
+    .empty-container .home-button {
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    .empty-container .home-button:hover {
+      background-color: #45a049;
+    }
+    /* Icon styling */
+    .empty-cart-icon {
+      font-size: 3rem;
+      color: #ccc;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="empty-container">
+    <div class="empty-cart-icon">🛒</div>
+    <h2>Your Cart is Currently Empty</h2>
+    <p>Looks like you haven't added anything to your cart yet.</p>
+    <a href="index.html" class="home-button">Go to Home Page</a>
+  </div>
+
+</body>
+</html>
