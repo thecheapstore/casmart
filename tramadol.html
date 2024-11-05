@@ -170,21 +170,22 @@
       <h1>Tramadol</h1>
       <p class="product-power">50mg</p>
 
-      <!-- Package Dropdown -->
-      <div class="dropdown-container">
-        <label for="package-select">Select Package:</label>
-        <select id="package-select" class="package-select">
-          <option value="60">60 Pills</option>
-          <option value="90">90 Pills</option>
-          <option value="120">120 Pills</option>
-          <option value="180">180 Pills</option>
-          <option value="240">240 Pills</option>
-          <option value="300">300 Pills</option>
-        </select>
-      </div>
-
-      <!-- Price -->
-      <p class="product-price">MRP: $<span id="price">50.00</span></p>
+        <!-- Package Dropdown -->
+<div class="dropdown-container">
+    <label for="package-select">Select Package:</label>
+    <select id="package-select" class="package-select">
+      <option value="60">60 Pills</option>
+      <option value="90">90 Pills</option>
+      <option value="120">120 Pills</option>
+      <option value="180">180 Pills</option>
+      <option value="240">240 Pills</option>
+      <option value="300">300 Pills</option>
+    </select>
+  </div>
+  
+  <!-- Price -->
+  <p class="product-price" id="product-price">$360.00</p>
+  
 
       <!-- Place Order Button -->
       <a href="place-order.html" class="order-button">Place Order</a>
@@ -205,6 +206,28 @@
       </div>
     </div>
   </div>
+
+  <script>
+    const packageSelect = document.getElementById('package-select');
+    const priceDisplay = document.getElementById('product-price');
+  
+    // Price mapping based on the number of pills
+    const priceMapping = {
+      '60': 360,
+      '90': 450,
+      '120': 540,
+      '180': 720,
+      '240': 900,
+      '300': 1080,
+    };
+  
+    packageSelect.addEventListener('change', function () {
+      const selectedValue = this.value;
+      const price = priceMapping[selectedValue];
+      priceDisplay.textContent = `$${price}.00`;
+    });
+  </script>
+
 
 </body>
 </html>
