@@ -26,14 +26,14 @@
     }
 
     .product-card img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  margin-bottom: 1rem;
-  display: block; /* Ensures the image is treated as a block element */
-  margin-left: auto; /* Centers the image horizontally */
-  margin-right: auto; /* Centers the image horizontally */
-}
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
     .product-card h3, .product-card p {
       margin: 0.5rem 0;
@@ -62,81 +62,39 @@
     .pagination button:hover {
       background-color: #45a049;
     }
+
+    /* Responsive adjustments */
+    @media (max-width: 1024px) {
+      .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .product-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+      }
+      
+      .product-card img {
+        width: 80px;
+        height: 80px;
+      }
+    }
   </style>
 </head>
 
 <body>
-
   <!-- HEADER -->
   <header class="header">
-    <div class="container">
-      <div class="overlay" data-overlay></div>
-      <div class="header-search">
-        <input type="search" name="search" placeholder="Search Product..." class="input-field">
-        <button class="search-btn" aria-label="Search">
-          <ion-icon name="search-outline"></ion-icon>
-        </button>
-      </div>
-
-      <a href="index.html" class="logo">
-        <img src="./assets/images/Opti.png" alt="OptiPharmacy logo" width="130" height="31">
-      </a>
-
-      <div class="header-actions">
-        <button class="header-action-btn">
-          <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
-          <a href="sign-up.html">
-            <p class="header-action-label">Sign in</p>
-          </a>
-        </button>
-
-        <button class="header-action-btn">
-          <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
-          <p class="header-action-label">Search</p>
-        </button>
-
-        <a href="cart.html">
-          <button class="header-action-btn">
-            <ion-icon name="cart-outline" aria-hidden="true"></ion-icon>
-            <p class="header-action-label">Cart</p>
-            <div class="btn-badge green" aria-hidden="true">0</div>
-          </button>
-        </a>
-        
-        <a href="wishlist.html">
-          <button class="header-action-btn">
-            <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-            <p class="header-action-label">Wishlist</p>
-            <div class="btn-badge" aria-hidden="true">0</div>
-          </button>
-        </a>        
-
-      </div>
-
-      <button class="nav-open-btn" data-nav-open-btn aria-label="Open Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="navbar" data-navbar>
-        <div class="navbar-top">
-          <a href="index.html" class="logo">
-            <img src="./assets/images/Opti.png" alt="OptiPharmacy logo" width="130" height="31">
-          </a>
-          <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
-            <ion-icon name="close-outline"></ion-icon>
-          </button>
-        </div>
-        <ul class="navbar-list">
-          <li><a href="index.html" class="navbar-link">Home</a></li>
-          <li><a href="products.html" class="navbar-link">Shop</a></li>
-          <li><a href="about.html" class="navbar-link">About</a></li>
-          <li><a href="blog.html" class="navbar-link">Blog</a></li>
-          <li><a href="contact-us.html" class="navbar-link">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+    <!-- Your header content here -->
   </header>
 
   <!-- PRODUCTS SECTION -->
@@ -210,6 +168,5 @@
       &copy; 2024 <a href="index.html">Opti Pharmacy</a>. All Rights Reserved
     </p>
   </footer>
-
 </body>
 </html>
