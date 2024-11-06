@@ -99,8 +99,8 @@
     <div class="container">
       <div class="overlay" data-overlay></div>
       <div class="header-search">
-        <input type="search" name="search" placeholder="Search Product..." class="input-field">
-        <button class="search-btn" aria-label="Search">
+        <input type="search" id="search-input" name="search" placeholder="Search Product..." class="input-field">
+        <button id="search-btn" class="search-btn" aria-label="Search">
           <ion-icon name="search-outline"></ion-icon>
         </button>
       </div>
@@ -235,6 +235,12 @@
         price: "$400.00 – $1,090.00",
         link: "/product/oxycontin-op-60.html"
       },
+      {
+        imgSrc: "https://tramadol100.us/wp-content/uploads/2023/08/Oxycontin_40mg.jpg",
+        name: "Oxycontin OP 40Mg",
+        price: "$380.00 – $998.00",
+        link: "/product/oxycontin-op-40.html"
+      },
       // Add more products here
     ];
 
@@ -260,6 +266,48 @@
     }
 
     document.addEventListener("DOMContentLoaded", () => showProducts(1));
+  </script>
+
+  <script>
+    // Add event listener for search button
+document.getElementById("search-btn").addEventListener("click", function () {
+  const searchTerm = document.getElementById("search-input").value.toLowerCase();  // Get the value of search input and convert to lowercase
+  filterProducts(searchTerm);
+});
+
+// Function to filter products based on the search term
+function filterProducts(searchTerm) {
+  const productGrid = document.getElementById("product-grid");
+  productGrid.innerHTML = "";  // Clear current products
+
+  // Filter the allProducts array to get the matching products
+  const filteredProducts = allProducts.filter((product) =>
+    product.name.toLowerCase().includes(searchTerm)  // Check if product name includes search term
+  );
+
+  // If no products are found
+  if (filteredProducts.length === 0) {
+    productGrid.innerHTML = `<p>No products found</p>`;
+  }
+
+  // Display filtered products
+  filteredProducts.forEach((product) => {
+    const productCard = document.createElement("div");
+    productCard.classList.add("product-card");
+
+    productCard.innerHTML = `
+      <a href="${product.link}"><img src="${product.imgSrc}" alt="${product.name}"></a>
+      <h3><a href="${product.link}">${product.name}</a></h3>
+      <p>${product.price}</p>
+    `;
+    
+    productGrid.appendChild(productCard);
+  });
+}
+
+// Initially show all products (if no search term)
+document.addEventListener("DOMContentLoaded", () => showProducts(1));
+
   </script>
 
   <!-- FOOTER -->
