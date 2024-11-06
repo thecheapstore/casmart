@@ -7,7 +7,6 @@
   <title>Products - Opti Pharmacy</title>
   <link rel="stylesheet" href="./assets/css/style.css">
   <style>
-    /* Basic styling for the product grid */
     .product-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -16,7 +15,7 @@
       max-width: 1200px;
       margin: auto;
     }
-    
+
     .product-card {
       background-color: #ffffff;
       border-radius: 8px;
@@ -25,20 +24,20 @@
       text-align: center;
       transition: transform 0.3s;
     }
-    
+
     .product-card img {
       width: 100px;
       height: 100px;
       object-fit: cover;
       margin-bottom: 1rem;
     }
-    
+
     .product-card h3, .product-card p {
       margin: 0.5rem 0;
       font-size: 1rem;
       color: #333;
     }
-    
+
     .pagination {
       display: flex;
       justify-content: center;
@@ -65,18 +64,12 @@
 
 <body>
 
-  <!-- 
-    - #HEADER
-  -->
-
-  <header class="header" data-header>
+  <!-- HEADER -->
+  <header class="header">
     <div class="container">
-
       <div class="overlay" data-overlay></div>
-
       <div class="header-search">
         <input type="search" name="search" placeholder="Search Product..." class="input-field">
-
         <button class="search-btn" aria-label="Search">
           <ion-icon name="search-outline"></ion-icon>
         </button>
@@ -87,18 +80,15 @@
       </a>
 
       <div class="header-actions">
-
         <button class="header-action-btn">
           <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
-
           <a href="sign-up.html">
-          <p class="header-action-label">Sign in</p>
-        </a>
+            <p class="header-action-label">Sign in</p>
+          </a>
         </button>
 
         <button class="header-action-btn">
           <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
-
           <p class="header-action-label">Search</p>
         </button>
 
@@ -127,59 +117,29 @@
       </button>
 
       <nav class="navbar" data-navbar>
-
         <div class="navbar-top">
-
           <a href="index.html" class="logo">
             <img src="./assets/images/Opti.png" alt="OptiPharmacy logo" width="130" height="31">
           </a>
-
           <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
             <ion-icon name="close-outline"></ion-icon>
           </button>
-
         </div>
-
         <ul class="navbar-list">
-
-          <li>
-            <a href="index.html" class="navbar-link">Home</a>
-          </li>
-
-          <li>
-            <a href="products.html" class="navbar-link">Shop</a>
-          </li>
-
-          <li>
-            <a href="about.html" class="navbar-link">About</a>
-          </li>
-
-          <li>
-            <a href="blog.html" class="navbar-link">Blog</a>
-          </li>
-
-          <li>
-            <a href="contact-us.html" class="navbar-link">Contact</a>
-          </li>
-
+          <li><a href="index.html" class="navbar-link">Home</a></li>
+          <li><a href="products.html" class="navbar-link">Shop</a></li>
+          <li><a href="about.html" class="navbar-link">About</a></li>
+          <li><a href="blog.html" class="navbar-link">Blog</a></li>
+          <li><a href="contact-us.html" class="navbar-link">Contact</a></li>
         </ul>
-
       </nav>
-
     </div>
   </header>
 
   <!-- PRODUCTS SECTION -->
   <section class="product-section">
-    <div class="product-grid" id="product-grid">
-      <!-- Sample product cards (replace with actual product info) -->
-      <div class="product-card">
-        <a href="/product/tramadol.html"><img src="https://t4.ftcdn.net/jpg/05/25/69/93/360_F_525699313_ksNjBKmSFCeRxt3Rl0BkYlc2rOoi6Z9y.jpg" alt="Product Image"></a>
-        <h3><a href="example.html">Tramadol 50mg</a></h3>
-        <p>$36 - $1890</p>
-      </div>
-      <!-- Repeat similar product cards up to 20 products -->
-    </div>
+    <div class="product-grid" id="product-grid"></div>
+
     <div class="pagination">
       <button onclick="showProducts(1)">1</button>
       <button onclick="showProducts(2)">2</button>
@@ -189,17 +149,26 @@
   </section>
 
   <script>
-    const allProducts = Array(40).fill().map((_, i) => ({
-      imgSrc: "path/to/image.jpg",
-      name: `Product Name ${i + 1}`,
-      price: `$${(i + 1) * 2} - $${(i + 1) * 3}`,
-      link: "example.html"
-    }));
-    
+    const allProducts = [
+      {
+        imgSrc: "https://t4.ftcdn.net/jpg/05/25/69/93/360_F_525699313_ksNjBKmSFCeRxt3Rl0BkYlc2rOoi6Z9y.jpg",
+        name: "Tramadol 50mg",
+        price: "$36 - $1890",
+        link: "/product/tramadol.html"
+      },
+      {
+        imgSrc: "./assets/images/product2.jpg",
+        name: "Product 2",
+        price: "$45 - $2500",
+        link: "/product/product2.html"
+      },
+      // Add more products here
+    ];
+
     function showProducts(pageNumber) {
       const productGrid = document.getElementById("product-grid");
       productGrid.innerHTML = "";
-      
+
       const startIndex = (pageNumber - 1) * 20;
       const currentProducts = allProducts.slice(startIndex, startIndex + 20);
 
@@ -220,12 +189,12 @@
     document.addEventListener("DOMContentLoaded", () => showProducts(1));
   </script>
 
-<!-- FOOTER -->
-<footer class="footer">
+  <!-- FOOTER -->
+  <footer class="footer">
     <p class="copyright">
-        &copy; 2024 <a href="index.html">Opti Pharmacy</a>. All Rights Reserved
-      </p>
-
+      &copy; 2024 <a href="index.html">Opti Pharmacy</a>. All Rights Reserved
+    </p>
+  </footer>
 
 </body>
 </html>
