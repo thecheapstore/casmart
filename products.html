@@ -7,6 +7,21 @@
   <title>Products - Opti Pharmacy</title>
   <link rel="stylesheet" href="./assets/css/style.css">
   <style>
+    /* Make sure search button is always visible and clickable */
+@media (max-width: 768px) {
+  .search-btn {
+    z-index: 10;  /* Ensure it's on top of other elements */
+    position: relative;  /* Fix positioning issues */
+    width: 50px; /* Adjust size for mobile */
+    height: 50px; /* Adjust size for mobile */
+  }
+  
+  /* Make input field also responsive */
+  .input-field {
+    width: 80%; /* Make it larger on mobile */
+  }
+}
+
     .product-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -269,8 +284,9 @@
   </script>
 
   <script>
-  // Add event listener for search button click
-document.getElementById("search-btn").addEventListener("click", function () {
+    // Add event listener for search button click (mobile touch and desktop click)
+const searchBtn = document.getElementById("search-btn");
+searchBtn.addEventListener("click", function () {
   const searchTerm = document.getElementById("search-input").value.toLowerCase();
   filterProducts(searchTerm);
 });
