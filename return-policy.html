@@ -53,13 +53,18 @@
 
 <body>
 
-  <!-- HEADER -->
+  <!-- 
+    - #HEADER
+  -->
+
   <header class="header" data-header>
     <div class="container">
+
       <div class="overlay" data-overlay></div>
 
       <div class="header-search">
         <input type="search" name="search" placeholder="Search Product..." class="input-field">
+
         <button class="search-btn" aria-label="Search">
           <ion-icon name="search-outline"></ion-icon>
         </button>
@@ -99,17 +104,56 @@
             <p class="header-action-label">Wishlist</p>
             <div class="btn-badge" aria-hidden="true">0</div>
           </button>
+        </a>        
+
       </div>
 
+      <button class="nav-open-btn" data-nav-open-btn aria-label="Open Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <nav class="navbar" data-navbar>
+
+        <div class="navbar-top">
+
+          <a href="index.html" class="logo">
+            <img src="./assets/images/Opti.png" alt="OptiPharmacy logo" width="130" height="31">
+          </a>
+
+          <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+
+        </div>
+
         <ul class="navbar-list">
-          <li><a href="index.html" class="navbar-link">Home</a></li>
-          <li><a href="#" class="navbar-link">Shop</a></li>
-          <li><a href="#" class="navbar-link">About</a></li>
-          <li><a href="#" class="navbar-link">Blog</a></li>
-          <li><a href="#" class="navbar-link">Contact</a></li>
+
+          <li>
+            <a href="index.html" class="navbar-link">Home</a>
+          </li>
+
+          <li>
+            <a href="products.html" class="navbar-link">Shop</a>
+          </li>
+
+          <li>
+            <a href="about.html" class="navbar-link">About</a>
+          </li>
+
+          <li>
+            <a href="blog.html" class="navbar-link">Blog</a>
+          </li>
+
+          <li>
+            <a href="contact-us.html" class="navbar-link">Contact</a>
+          </li>
+
         </ul>
+
       </nav>
+
     </div>
   </header>
 
