@@ -8,10 +8,10 @@
   <title>Opti Pharmacy - Product Page</title>
 
   <!-- favicon -->
-  <link rel="shortcut icon" href="/product/favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="../favicon.svg" type="image/svg+xml">
 
   <!-- custom css link -->
-  <link rel="stylesheet" href="/product/assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
 
   <!-- google font link -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -109,10 +109,7 @@
 
 <body>
 
-  <!-- 
-    - #HEADER
-  -->
-
+  <!-- HEADER -->
   <header class="header" data-header>
     <div class="container">
 
@@ -126,27 +123,24 @@
         </button>
       </div>
 
-      <a href="/index.html" class="logo">
-        <img src="/product/assets/images/Opti.png" alt="OptiPharmacy logo" width="130" height="31">
+      <a href="../index.html" class="logo">
+        <img src="../assets/images/Opti.png" alt="OptiPharmacy logo" width="130" height="31">
       </a>
 
       <div class="header-actions">
-
         <button class="header-action-btn">
           <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
-
-          <a href="/sign-up.html">
+          <a href="../sign-up.html">
             <p class="header-action-label">Sign in</p>
           </a>
         </button>
 
         <button class="header-action-btn">
           <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
-
           <p class="header-action-label">Search</p>
         </button>
 
-        <a href="/cart.html">
+        <a href="../cart.html">
           <button class="header-action-btn">
             <ion-icon name="cart-outline" aria-hidden="true"></ion-icon>
             <p class="header-action-label">Cart</p>
@@ -154,14 +148,13 @@
           </button>
         </a>
 
-        <a href="/wishlist.html">
+        <a href="../wishlist.html">
           <button class="header-action-btn">
             <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
             <p class="header-action-label">Wishlist</p>
             <div class="btn-badge" aria-hidden="true">0</div>
           </button>
         </a>
-
       </div>
 
       <button class="nav-open-btn" data-nav-open-btn aria-label="Open Menu">
@@ -171,43 +164,23 @@
       </button>
 
       <nav class="navbar" data-navbar>
-
         <div class="navbar-top">
-
-          <a href="/index.html" class="logo">
-            <img src="/product/assets/images/Opti.png" alt="OptiPharmacy logo" width="130" height="31">
+          <a href="../index.html" class="logo">
+            <img src="../assets/images/Opti.png" alt="OptiPharmacy logo" width="130" height="31">
           </a>
 
           <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
             <ion-icon name="close-outline"></ion-icon>
           </button>
-
         </div>
 
         <ul class="navbar-list">
-
-          <li>
-            <a href="/index.html" class="navbar-link">Home</a>
-          </li>
-
-          <li>
-            <a href="/products.html" class="navbar-link">Shop</a>
-          </li>
-
-          <li>
-            <a href="/about.html" class="navbar-link">About</a>
-          </li>
-
-          <li>
-            <a href="/blog.html" class="navbar-link">Blog</a>
-          </li>
-
-          <li>
-            <a href="/contact-us.html" class="navbar-link">Contact</a>
-          </li>
-
+          <li><a href="../index.html" class="navbar-link">Home</a></li>
+          <li><a href="../products.html" class="navbar-link">Shop</a></li>
+          <li><a href="../about.html" class="navbar-link">About</a></li>
+          <li><a href="../blog.html" class="navbar-link">Blog</a></li>
+          <li><a href="../contact-us.html" class="navbar-link">Contact</a></li>
         </ul>
-
       </nav>
 
     </div>
@@ -215,12 +188,10 @@
 
   <!-- PRODUCT SECTION -->
   <div class="product-container">
-    <!-- Product Image -->
     <div class="product-image">
       <img src="https://t4.ftcdn.net/jpg/05/25/69/93/360_F_525699313_ksNjBKmSFCeRxt3Rl0BkYlc2rOoi6Z9y.jpg" alt="Medicine Image">
     </div>
 
-    <!-- Product Details -->
     <div class="product-details">
       <h1>Tramadol</h1>
       <p class="product-power">50mg</p>
@@ -238,11 +209,10 @@
         </select>
       </div>
 
-      <!-- Price -->
       <p class="product-price" id="product-price">$360.00</p>
 
       <!-- Place Order Button -->
-      <a href="/place-order.html" class="order-button">Place Order</a>
+      <a href="../place-order.html" class="order-button">Place Order</a>
 
       <!-- Meta Information -->
       <div class="meta-info">
@@ -261,11 +231,11 @@
     </div>
   </div>
 
+  <script src="../assets/js/main.js"></script>
   <script>
     const packageSelect = document.getElementById('package-select');
     const priceDisplay = document.getElementById('product-price');
-  
-    // Price mapping based on the number of pills
+
     const priceMapping = {
       '60': 360,
       '90': 450,
@@ -274,7 +244,7 @@
       '240': 900,
       '300': 1080,
     };
-  
+
     packageSelect.addEventListener('change', function () {
       const selectedValue = this.value;
       const price = priceMapping[selectedValue];
@@ -282,11 +252,13 @@
     });
   </script>
 
- <!-- FOOTER -->
- <footer class="footer">
+  <!-- FOOTER -->
+  <footer class="footer">
     <p class="copyright">
-        &copy; 2024 <a href="/index.html">Opti Pharmacy</a>. All Rights Reserved
-      </p>
+      &copy; 2024 <a href="../index.html">Opti Pharmacy</a>. All Rights Reserved
+    </p>
+  </footer>
 
 </body>
+
 </html>
