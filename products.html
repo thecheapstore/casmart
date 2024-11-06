@@ -269,10 +269,18 @@
   </script>
 
   <script>
-    // Add event listener for search button
+  // Add event listener for search button click
 document.getElementById("search-btn").addEventListener("click", function () {
-  const searchTerm = document.getElementById("search-input").value.toLowerCase();  // Get the value of search input and convert to lowercase
+  const searchTerm = document.getElementById("search-input").value.toLowerCase();
   filterProducts(searchTerm);
+});
+
+// Add event listener for "Enter" key press in the search input field
+document.getElementById("search-input").addEventListener("keydown", function (e) {
+  if (e.key === "Enter") {
+    const searchTerm = e.target.value.toLowerCase();  // Get the value of search input and convert to lowercase
+    filterProducts(searchTerm);
+  }
 });
 
 // Function to filter products based on the search term
