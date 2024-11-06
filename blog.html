@@ -1,186 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog - Opti Pharmacy</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
   <style>
-    /* General page styling */
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f6f8;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-
-    /* Header Styling */
-    .header {
-      background-color: #ffffff;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      padding: 1rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-
-    /* Navbar and header elements */
-    .header .logo img {
-      width: 130px;
-      height: auto;
-    }
-
-    .header-search {
-      display: inline-block;
-      margin-left: 20px;
-    }
-
-    .input-field {
-      padding: 0.5rem;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-    }
-
-    .header-actions {
-      display: inline-flex;
-      gap: 20px;
-      float: right;
-    }
-
-    .header-action-btn {
-      display: inline-block;
-      color: #333;
-      text-align: center;
-      cursor: pointer;
-    }
-
-    .header-action-label {
-      display: block;
-      font-size: 0.8rem;
-      margin-top: 4px;
-    }
-
-    .navbar {
-      margin-top: 1rem;
-    }
-
-    .navbar-list {
-      list-style-type: none;
-      padding: 0;
-      display: flex;
-      gap: 1rem;
-    }
-
-    .navbar-link {
-      text-decoration: none;
-      color: #333;
-    }
-
-    /* Blog Container */
-    .blog-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-
-    /* Blog Header */
-    .blog-header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .blog-header h1 {
-      font-size: 2.5rem;
-      color: #4CAF50;
-    }
-
-    /* Blog grid */
+    /* Basic styling for blog posts grid */
     .blog-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
     }
-
-    .blog-post {
+    
+    .blog-card {
       background-color: #ffffff;
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
       text-align: center;
+      padding: 1rem;
+      transition: transform 0.3s;
     }
-
-    .post-banner img {
+    
+    .blog-card img {
       width: 100%;
-      height: 200px;
+      height: 180px;
       object-fit: cover;
-      display: block;
+      border-radius: 8px;
+      margin-bottom: 1rem;
     }
-
-    .post-title {
-      font-size: 1.5rem;
-      padding: 1rem;
+    
+    .blog-card h3 {
+      font-size: 1.2rem;
       color: #333;
-      font-weight: bold;
-      line-height: 1.4;
+      margin: 0.5rem 0;
     }
 
-    /* Footer styling */
-    footer {
-      background-color: #333;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 600px) {
-      .post-title {
-        font-size: 1.2rem;
-      }
+    .blog-card p {
+      font-size: 0.9rem;
+      color: #666;
+      margin: 0.5rem 0;
     }
   </style>
 </head>
-<body>
 
-  <!-- HEADER -->
-  <header class="header">
+<body>
+  <!-- HEADER & NAVBAR -->
+  <header class="header" data-header>
     <div class="container">
       <div class="header-search">
-        <input type="search" name="search" placeholder="Search Product..." class="input-field">
+        <input type="search" name="search" placeholder="Search Blog..." class="input-field">
         <button class="search-btn" aria-label="Search">
           <ion-icon name="search-outline"></ion-icon>
         </button>
       </div>
 
       <a href="index.html" class="logo">
-        <img src="./assets/images/Opti.png" alt="OptiPharmacy logo">
+        <img src="./assets/images/Opti.png" alt="OptiPharmacy logo" width="130" height="31">
       </a>
 
       <div class="header-actions">
-        <a href="cart.html" class="header-action-btn">
-          <ion-icon name="cart-outline" aria-hidden="true"></ion-icon>
-          <p class="header-action-label">Cart</p>
-        </a>
-
-        <a href="wishlist.html" class="header-action-btn">
-          <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-          <p class="header-action-label">Wishlist</p>
-        </a>
-
-        <a href="sign-up.html" class="header-action-btn">
+        <button class="header-action-btn">
           <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
-          <p class="header-action-label">Sign in</p>
+          <a href="sign-up.html"><p class="header-action-label">Sign in</p></a>
+        </button>
+        
+        <a href="cart.html">
+          <button class="header-action-btn">
+            <ion-icon name="cart-outline" aria-hidden="true"></ion-icon>
+            <p class="header-action-label">Cart</p>
+            <div class="btn-badge green" aria-hidden="true">0</div>
+          </button>
+        </a>
+        
+        <a href="wishlist.html">
+          <button class="header-action-btn">
+            <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+            <p class="header-action-label">Wishlist</p>
+            <div class="btn-badge" aria-hidden="true">0</div>
+          </button>
         </a>
       </div>
 
-      <nav class="navbar">
+      <nav class="navbar" data-navbar>
         <ul class="navbar-list">
           <li><a href="index.html" class="navbar-link">Home</a></li>
           <li><a href="#" class="navbar-link">Shop</a></li>
@@ -192,63 +98,35 @@
     </div>
   </header>
 
-  <!-- Blog Container -->
-  <div class="blog-container">
-    <!-- Blog Header -->
-    <div class="blog-header">
-      <h1>Our Latest Blogs</h1>
-      <p>Stay informed with the latest updates, health tips, and insights from Opti Pharmacy.</p>
-    </div>
-
-    <!-- Blog Grid -->
+  <!-- BLOG SECTION -->
+  <section class="blog-section">
     <div class="blog-grid">
-      <!-- Blog Post 1 -->
-      <div class="blog-post">
-        <div class="post-banner">
-          <img src="https://via.placeholder.com/300x200" alt="Blog Banner 1">
-        </div>
-        <div class="post-title">How to Choose the Right Supplements for Your Health</div>
+      <!-- Sample blog posts (replace with actual blog post info) -->
+      <div class="blog-card">
+        <a href="example.html"><img src="path/to/image1.jpg" alt="Blog Post Image"></a>
+        <h3><a href="example.html">Blog Post Title 1</a></h3>
+        <p>Short description of the blog post...</p>
       </div>
-
-      <!-- Blog Post 2 -->
-      <div class="blog-post">
-        <div class="post-banner">
-          <img src="https://via.placeholder.com/300x200" alt="Blog Banner 2">
-        </div>
-        <div class="post-title">5 Essential Tips for Managing Stress and Anxiety</div>
+      <div class="blog-card">
+        <a href="example.html"><img src="path/to/image2.jpg" alt="Blog Post Image"></a>
+        <h3><a href="example.html">Blog Post Title 2</a></h3>
+        <p>Short description of the blog post...</p>
       </div>
-
-      <!-- Blog Post 3 -->
-      <div class="blog-post">
-        <div class="post-banner">
-          <img src="https://via.placeholder.com/300x200" alt="Blog Banner 3">
-        </div>
-        <div class="post-title">Understanding Prescription Medications and Their Side Effects</div>
+      <div class="blog-card">
+        <a href="example.html"><img src="path/to/image3.jpg" alt="Blog Post Image"></a>
+        <h3><a href="example.html">Blog Post Title 3</a></h3>
+        <p>Short description of the blog post...</p>
       </div>
-
-      <!-- Blog Post 4 -->
-      <div class="blog-post">
-        <div class="post-banner">
-          <img src="https://via.placeholder.com/300x200" alt="Blog Banner 4">
-        </div>
-        <div class="post-title">The Importance of Regular Health Check-ups</div>
-      </div>
-
-      <!-- Blog Post 5 -->
-      <div class="blog-post">
-        <div class="post-banner">
-          <img src="https://via.placeholder.com/300x200" alt="Blog Banner 5">
-        </div>
-        <div class="post-title">Healthy Eating Habits for a Balanced Lifestyle</div>
-      </div>
+      <!-- Repeat blog-card for more posts -->
     </div>
-  </div>
+  </section>
 
-  <!-- FOOTER -->
- <footer class="footer">
-  <p class="copyright">
-      &copy; 2024 <a href="index.html">Opti Pharmacy</a>. All Rights Reserved
-    </p>
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Opti Pharmacy. All rights reserved.</p>
+    </div>
+  </footer>
 
 </body>
+
 </html>
