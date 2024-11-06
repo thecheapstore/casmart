@@ -14,14 +14,82 @@
       padding: 0;
     }
 
-    /* Center content and style the container */
+    /* Header Styling */
+    .header {
+      background-color: #ffffff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Navbar and header elements */
+    .header .logo img {
+      width: 130px;
+      height: auto;
+    }
+
+    .header-search {
+      display: inline-block;
+      margin-left: 20px;
+    }
+
+    .input-field {
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .header-actions {
+      display: inline-flex;
+      gap: 20px;
+      float: right;
+    }
+
+    .header-action-btn {
+      display: inline-block;
+      color: #333;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .header-action-label {
+      display: block;
+      font-size: 0.8rem;
+      margin-top: 4px;
+    }
+
+    .navbar {
+      margin-top: 1rem;
+    }
+
+    .navbar-list {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .navbar-link {
+      text-decoration: none;
+      color: #333;
+    }
+
+    /* Blog Container */
     .blog-container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 2rem;
     }
 
-    /* Blog header styling */
+    /* Blog Header */
     .blog-header {
       text-align: center;
       margin-bottom: 2rem;
@@ -32,14 +100,13 @@
       color: #4CAF50;
     }
 
-    /* Blog grid layout */
+    /* Blog grid */
     .blog-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
     }
 
-    /* Blog post card styling */
     .blog-post {
       background-color: #ffffff;
       border-radius: 8px;
@@ -55,7 +122,6 @@
       display: block;
     }
 
-    /* Title styling */
     .post-title {
       font-size: 1.5rem;
       padding: 1rem;
@@ -64,7 +130,16 @@
       line-height: 1.4;
     }
 
-    /* Responsive styling */
+    /* Footer styling */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* Responsive adjustments */
     @media (max-width: 600px) {
       .post-title {
         font-size: 1.2rem;
@@ -73,6 +148,49 @@
   </style>
 </head>
 <body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <div class="header-search">
+        <input type="search" name="search" placeholder="Search Product..." class="input-field">
+        <button class="search-btn" aria-label="Search">
+          <ion-icon name="search-outline"></ion-icon>
+        </button>
+      </div>
+
+      <a href="index.html" class="logo">
+        <img src="./assets/images/Opti.png" alt="OptiPharmacy logo">
+      </a>
+
+      <div class="header-actions">
+        <a href="cart.html" class="header-action-btn">
+          <ion-icon name="cart-outline" aria-hidden="true"></ion-icon>
+          <p class="header-action-label">Cart</p>
+        </a>
+
+        <a href="wishlist.html" class="header-action-btn">
+          <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+          <p class="header-action-label">Wishlist</p>
+        </a>
+
+        <a href="sign-up.html" class="header-action-btn">
+          <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+          <p class="header-action-label">Sign in</p>
+        </a>
+      </div>
+
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li><a href="index.html" class="navbar-link">Home</a></li>
+          <li><a href="#" class="navbar-link">Shop</a></li>
+          <li><a href="#" class="navbar-link">About</a></li>
+          <li><a href="#" class="navbar-link">Blog</a></li>
+          <li><a href="#" class="navbar-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <!-- Blog Container -->
   <div class="blog-container">
@@ -125,6 +243,12 @@
       </div>
     </div>
   </div>
+
+  <!-- FOOTER -->
+ <footer class="footer">
+  <p class="copyright">
+      &copy; 2024 <a href="index.html">Opti Pharmacy</a>. All Rights Reserved
+    </p>
 
 </body>
 </html>
