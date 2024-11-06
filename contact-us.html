@@ -10,7 +10,21 @@
     .contact-section {
       padding: 2rem;
       max-width: 1200px;
-      margin: 0 auto;
+      margin: auto;
+    }
+
+    .contact-section h1,
+    .contact-section h2 {
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      color: #333;
+    }
+
+    .contact-section p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #666;
+      margin-bottom: 1rem;
     }
 
     .contact-info {
@@ -20,26 +34,30 @@
     }
 
     .contact-info img {
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
       margin-right: 1rem;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
     }
 
-    .contact-info .info {
-      flex: 1;
+    .contact-info div {
+      font-size: 1.2rem;
+      color: #333;
     }
 
-    .contact-info h3 {
-      font-size: 1.5rem;
-      margin: 0.5rem 0;
+    .contact-info a {
+      color: #0066cc;
+      text-decoration: none;
     }
 
-    .contact-info p {
-      font-size: 1rem;
-      color: #666;
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #333;
+      color: #fff;
     }
   </style>
 </head>
@@ -47,44 +65,87 @@
 <body>
   <!-- HEADER & NAVBAR -->
   <header class="header" data-header>
-    <!-- Add your header content here -->
+    <div class="container">
+      <div class="header-search">
+        <input type="search" name="search" placeholder="Search..." class="input-field">
+        <button class="search-btn" aria-label="Search">
+          <ion-icon name="search-outline"></ion-icon>
+        </button>
+      </div>
+
+      <a href="index.html" class="logo">
+        <img src="./assets/images/Opti.png" alt="OptiPharmacy logo" width="130" height="31">
+      </a>
+
+      <div class="header-actions">
+        <button class="header-action-btn">
+          <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+          <a href="sign-up.html"><p class="header-action-label">Sign in</p></a>
+        </button>
+
+        <a href="cart.html">
+          <button class="header-action-btn">
+            <ion-icon name="cart-outline" aria-hidden="true"></ion-icon>
+            <p class="header-action-label">Cart</p>
+            <div class="btn-badge green" aria-hidden="true">0</div>
+          </button>
+        </a>
+
+        <a href="wishlist.html">
+          <button class="header-action-btn">
+            <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+            <p class="header-action-label">Wishlist</p>
+            <div class="btn-badge" aria-hidden="true">0</div>
+          </button>
+        </a>
+      </div>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li><a href="index.html" class="navbar-link">Home</a></li>
+          <li><a href="about.html" class="navbar-link">About</a></li>
+          <li><a href="#" class="navbar-link">Shop</a></li>
+          <li><a href="#" class="navbar-link">Blog</a></li>
+          <li><a href="contact.html" class="navbar-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <!-- CONTACT US SECTION -->
+  <!-- CONTACT SECTION -->
   <section class="contact-section">
-    <!-- Schedule a Meeting -->
+    <h1>Contact Us</h1>
+
     <div class="contact-info">
-      <img src="https://cdn.jsdelivr.net/npm/heroicons@1.0.6/solid/location-marker.sv" alt="Location Icon">
-      <div class="info">
-        <h3>Schedule a meeting</h3>
-        <p>Write us a mail to set up a meet at our office.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Map_pin_icon.svg" alt="Location Icon">
+      <div>
+        <h2>Schedule a Meeting</h2>
+        <p>Write us a mail to set up a meeting at our office.</p>
       </div>
     </div>
 
-    <!-- 24/7 Support -->
     <div class="contact-info">
-      <img src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/svgs/solid/mobile-alt.svg" alt="Phone Icon">
-      <div class="info">
-        <h3>24*7 Chat and Call Support</h3>
-        <p>Contact us at: +1 916 243 0724</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Call_icon.svg" alt="Phone Icon">
+      <div>
+        <h2>24*7 Chat and Call Support</h2>
+        <p>Call us at: <a href="tel:+19162430724">+1 916 243 0724</a></p>
       </div>
     </div>
 
-    <!-- Write Us a Mail -->
     <div class="contact-info">
-      <img src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/svgs/solid/envelope.svg" alt="Email Icon">
-      <div class="info">
-        <h3>Write Us a Mail</h3>
-        <p>Email us at: <a href="mailto:theoptipharma@gmail.com">theoptipharma@gmail.com</a></p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Email_icon.svg" alt="Email Icon">
+      <div>
+        <h2>Write Us a Mail</h2>
+        <p>Contact us via email: <a href="mailto:theoptipharma@gmail.com">theoptipharma@gmail.com</a></p>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <p class="copyright">
-        &copy; 2024 <a href="index.html">Opti Pharmacy</a>. All Rights Reserved
-      </p>
+    <p class="copyright">&copy; 2024 <a href="index.html" style="color: white;">Opti Pharmacy</a>. All Rights Reserved</p>
+  </footer>
 
 </body>
+
 </html>
