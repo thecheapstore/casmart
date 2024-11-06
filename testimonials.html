@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opti Pharmacy - Testimonials</title>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- custom css link -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- google font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Return policy specific styling */
+    .return-policy-container {
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      max-width: 800px;
+      width: 100%;
+      margin: 2rem auto;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      color: #333;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #666;
+      line-height: 1.6;
+      margin: 0.5rem 0;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <div class="overlay" data-overlay></div>
+
+      <div class="header-search">
+        <input type="search" name="search" placeholder="Search Product..." class="input-field">
+
+        <button class="search-btn" aria-label="Search">
+          <ion-icon name="search-outline"></ion-icon>
+        </button>
+      </div>
+
+      <a href="index.html" class="logo">
+        <img src="./assets/images/Opti.png" alt="OptiPharmacy logo" width="130" height="31">
+      </a>
+
+      <div class="header-actions">
+
+        <button class="header-action-btn">
+          <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+
+          <a href="sign-up.html">
+          <p class="header-action-label">Sign in</p>
+        </a>
+        </button>
+
+        <button class="header-action-btn">
+          <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+
+          <p class="header-action-label">Search</p>
+        </button>
+
+        <a href="cart.html">
+          <button class="header-action-btn">
+            <ion-icon name="cart-outline" aria-hidden="true"></ion-icon>
+            <p class="header-action-label">Cart</p>
+            <div class="btn-badge green" aria-hidden="true">0</div>
+          </button>
+        </a>
+        
+        <a href="wishlist.html">
+          <button class="header-action-btn">
+            <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+            <p class="header-action-label">Wishlist</p>
+            <div class="btn-badge" aria-hidden="true">0</div>
+          </button>
+        </a>        
+
+      </div>
+
+      <button class="nav-open-btn" data-nav-open-btn aria-label="Open Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="navbar-top">
+
+          <a href="index.html" class="logo">
+            <img src="./assets/images/Opti.png" alt="OptiPharmacy logo" width="130" height="31">
+          </a>
+
+          <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+
+        </div>
+
+        <ul class="navbar-list">
+
+          <li>
+            <a href="index.html" class="navbar-link">Home</a>
+          </li>
+
+          <li>
+            <a href="products.html" class="navbar-link">Shop</a>
+          </li>
+
+          <li>
+            <a href="about.html" class="navbar-link">About</a>
+          </li>
+
+          <li>
+            <a href="blog.html" class="navbar-link">Blog</a>
+          </li>
+
+          <li>
+            <a href="contact-us.html" class="navbar-link">Contact</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+  </header>
+
+  <section class="section testimonials">
+    <div class="container">
+      <h2 class="section-title">What Our Customers Say</h2>
+  
+      <div class="testimonial-cards">
+        <!-- Male Testimonial 1 (Viagra - Men's Health) -->
+        <div class="testimonial-card">
+          <div class="testimonial-avatar">
+            <img src="https://randomuser.me/api/portraits/men/11.jpg" alt="John Doe">
+          </div>
+          <div class="testimonial-content">
+            <p class="testimonial-text">
+              "Opti Pharmacy has been a lifesaver for me. I ordered Viagra for my men's health needs, and the process was quick and easy. The product was effective, and I felt confident purchasing from a trusted online pharmacy."
+            </p>
+            <p class="testimonial-name">John D., California</p>
+            <p class="testimonial-product">Product Purchased: Viagra (Men's Health)</p>
+          </div>
+        </div>
+  
+        <!-- Female Testimonial 1 (Tramadol - Pain Relief) -->
+        <div class="testimonial-card">
+          <div class="testimonial-avatar">
+            <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Sarah Williams">
+          </div>
+          <div class="testimonial-content">
+            <p class="testimonial-text">
+              "I suffer from chronic pain, and I found Tramadol through Opti Pharmacy. It was delivered promptly, and I've been feeling much better. I'm so glad I can rely on this service for my pain management."
+            </p>
+            <p class="testimonial-name">Sarah W., New York</p>
+            <p class="testimonial-product">Product Purchased: Tramadol (Pain Relief)</p>
+          </div>
+        </div>
+  
+        <!-- Male Testimonial 2 (Soma - Pain Relief) -->
+        <div class="testimonial-card">
+          <div class="testimonial-avatar">
+            <img src="https://randomuser.me/api/portraits/men/7.jpg" alt="David Green">
+          </div>
+          <div class="testimonial-content">
+            <p class="testimonial-text">
+              "I ordered Soma for my back pain. The entire experience was seamless, from ordering to receiving my product. I'm now able to live with less pain, and Opti Pharmacy made it so easy."
+            </p>
+            <p class="testimonial-name">David G., Texas</p>
+            <p class="testimonial-product">Product Purchased: Soma (Pain Relief)</p>
+          </div>
+        </div>
+  
+        <!-- Female Testimonial 2 (Oxycodone - Pain Relief) -->
+        <div class="testimonial-card">
+          <div class="testimonial-avatar">
+            <img src="https://randomuser.me/api/portraits/women/5.jpg" alt="Emily Clark">
+          </div>
+          <div class="testimonial-content">
+            <p class="testimonial-text">
+              "I've been using Oxycodone for severe pain relief, and Opti Pharmacy provided me with a safe and quick way to get my medication. It was discreet, and I’m relieved to have found such a reliable pharmacy."
+            </p>
+            <p class="testimonial-name">Emily C., Florida</p>
+            <p class="testimonial-product">Product Purchased: Oxycodone (Pain Relief)</p>
+          </div>
+        </div>
+  
+        <!-- Male Testimonial 3 (Hydrocodone - Pain Relief) -->
+        <div class="testimonial-card">
+          <div class="testimonial-avatar">
+            <img src="https://randomuser.me/api/portraits/men/9.jpg" alt="Michael Johnson">
+          </div>
+          <div class="testimonial-content">
+            <p class="testimonial-text">
+              "Hydrocodone helped me with my joint pain, and I found it through Opti Pharmacy. The process was hassle-free, and the product worked exactly as described. Very satisfied with the service."
+            </p>
+            <p class="testimonial-name">Michael J., Nevada</p>
+            <p class="testimonial-product">Product Purchased: Hydrocodone (Pain Relief)</p>
+          </div>
+        </div>
+  
+        <!-- Female Testimonial 3 (Tapentadol - Pain Relief) -->
+        <div class="testimonial-card">
+          <div class="testimonial-avatar">
+            <img src="https://randomuser.me/api/portraits/women/6.jpg" alt="Olivia Brown">
+          </div>
+          <div class="testimonial-content">
+            <p class="testimonial-text">
+              "I used Tapentadol for nerve pain. I was a little hesitant, but the process was smooth, and the product arrived as expected. The relief I’ve felt has been incredible, and I’m grateful for Opti Pharmacy."
+            </p>
+            <p class="testimonial-name">Olivia B., Michigan</p>
+            <p class="testimonial-product">Product Purchased: Tapentadol (Pain Relief)</p>
+          </div>
+        </div>
+  
+        <!-- Male Testimonial 4 (Ambien - Sleep Disorders) -->
+        <div class="testimonial-card">
+          <div class="testimonial-avatar">
+            <img src="https://randomuser.me/api/portraits/men/15.jpg" alt="James Anderson">
+          </div>
+          <div class="testimonial-content">
+            <p class="testimonial-text">
+              "Ambien has been a great help for my sleep problems. I used to struggle with insomnia, but after ordering from Opti Pharmacy, I’ve been able to get a much better night’s sleep. Great service!"
+            </p>
+            <p class="testimonial-name">James A., California</p>
+            <p class="testimonial-product">Product Purchased: Ambien (Sleep Aid)</p>
+          </div>
+        </div>
+  
+        <!-- Female Testimonial 4 (Zolpidem - Sleep Disorders) -->
+        <div class="testimonial-card">
+          <div class="testimonial-avatar">
+            <img src="https://randomuser.me/api/portraits/women/11.jpg" alt="Isabella Davis">
+          </div>
+          <div class="testimonial-content">
+            <p class="testimonial-text">
+              "I’ve been using Zolpidem for my sleep issues, and I’m happy with the results. Opti Pharmacy made it easy to order, and my product arrived quickly. I'm sleeping better thanks to their help."
+            </p>
+            <p class="testimonial-name">Isabella D., Georgia</p>
+            <p class="testimonial-product">Product Purchased: Zolpidem (Sleep Aid)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p class="copyright">
+        &copy; 2024 <a href="index.html">Opti Pharmacy</a>. All Rights Reserved
+      </p>
+
+</body>
+</html>
