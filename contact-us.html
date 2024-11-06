@@ -8,39 +8,38 @@
   <link rel="stylesheet" href="./assets/css/style.css">
   <style>
     .contact-section {
-      display: flex;
-      justify-content: space-between;
       padding: 2rem;
       max-width: 1200px;
-      margin: auto;
-      gap: 2rem;
+      margin: 0 auto;
     }
 
-    .contact-item {
-      background-color: #ffffff;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      padding: 1rem;
-      width: 30%;
-      text-align: center;
+    .contact-info {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
     }
 
-    .contact-item img {
+    .contact-info img {
       width: 50px;
       height: 50px;
-      margin-bottom: 1rem;
+      margin-right: 1rem;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .contact-item h3 {
-      font-size: 1.2rem;
-      color: #333;
+    .contact-info .info {
+      flex: 1;
+    }
+
+    .contact-info h3 {
+      font-size: 1.5rem;
       margin: 0.5rem 0;
     }
 
-    .contact-item p {
-      font-size: 0.9rem;
+    .contact-info p {
+      font-size: 1rem;
       color: #666;
-      margin: 0.5rem 0;
     }
   </style>
 </head>
@@ -48,53 +47,44 @@
 <body>
   <!-- HEADER & NAVBAR -->
   <header class="header" data-header>
-    <div class="container">
-      <a href="index.html" class="logo">
-        <img src="./assets/images/Opti.png" alt="OptiPharmacy logo" width="130" height="31">
-      </a>
-      <nav class="navbar" data-navbar>
-        <ul class="navbar-list">
-          <li><a href="index.html" class="navbar-link">Home</a></li>
-          <li><a href="#" class="navbar-link">Shop</a></li>
-          <li><a href="#" class="navbar-link">About</a></li>
-          <li><a href="blog.html" class="navbar-link">Blog</a></li>
-          <li><a href="contact.html" class="navbar-link">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+    <!-- Add your header content here -->
   </header>
 
   <!-- CONTACT US SECTION -->
   <section class="contact-section">
-    <!-- Schedule a meeting -->
-    <div class="contact-item">
-      <img src="ttps://cdn.jsdelivr.net/npm/heroicons@1.0.6/solid/location-marker.svg" alt="Location Icon">
-      <h3>Schedule a Meeting</h3>
-      <p>Write us a mail to set up a meet at our office.</p>
+    <!-- Schedule a Meeting -->
+    <div class="contact-info">
+      <img src="https://cdn.jsdelivr.net/npm/heroicons@1.0.6/solid/location-marker.sv" alt="Location Icon">
+      <div class="info">
+        <h3>Schedule a meeting</h3>
+        <p>Write us a mail to set up a meet at our office.</p>
+      </div>
     </div>
 
-    <!-- 24*7 Chat and Call Support -->
-    <div class="contact-item">
-      <img src="https://cdn.jsdelivr.net/npm/heroicons@1.0.6/solid/phone.svg" alt="Phone Icon">
-      <h3>24*7 Chat and Call Support</h3>
-      <p>+1 916 243 0724</p>
+    <!-- 24/7 Support -->
+    <div class="contact-info">
+      <img src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/svgs/solid/mobile-alt.svg" alt="Phone Icon">
+      <div class="info">
+        <h3>24*7 Chat and Call Support</h3>
+        <p>Contact us at: +1 916 243 0724</p>
+      </div>
     </div>
 
     <!-- Write Us a Mail -->
-    <div class="contact-item">
-      <img src="https://cdn.jsdelivr.net/npm/heroicons@1.0.6/solid/mail.svg" alt="Mail Icon">
-      <h3>Write Us a Mail</h3>
-      <p>theoptipharma@gmail.com</p>
+    <div class="contact-info">
+      <img src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/svgs/solid/envelope.svg" alt="Email Icon">
+      <div class="info">
+        <h3>Write Us a Mail</h3>
+        <p>Email us at: <a href="mailto:theoptipharma@gmail.com">theoptipharma@gmail.com</a></p>
+      </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
     <p class="copyright">
-      &copy; 2024 <a href="index.html">Opti Pharmacy</a>. All Rights Reserved
-    </p>
-  </footer>
+        &copy; 2024 <a href="index.html">Opti Pharmacy</a>. All Rights Reserved
+      </p>
 
 </body>
-
 </html>
