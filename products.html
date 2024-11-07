@@ -108,6 +108,7 @@
         <button id="search-btn" class="search-btn" aria-label="Search">
           <ion-icon name="search-outline"></ion-icon>
         </button>
+        <button id="clear-btn" class="clear-btn">Clear Search</button>
       </div>
 
       <a href="index.html" class="logo">
@@ -264,40 +265,81 @@
       },
       // Add more products here
     ];
+    
+    // Display products (Initial load)
+function showProducts(page = 1) {
+  const productsPerPage = 20;
+  const start = (page - 1) * productsPerPage;
+  const end = start + productsPerPage;
 
-    function filterProducts(searchTerm) {
-      productGrid.innerHTML = "";  // Clear current products
-      const filteredProducts = allProducts.filter((product) =>
-        product.name.toLowerCase().includes(searchTerm.toLowerCase())
-      );
+  const currentProducts = allProducts.slice(start, end); // Slice the products based on the page
 
-      if (filteredProducts.length === 0) {
-        productGrid.innerHTML = `<p>No products found</p>`;
-        return;
-      }
+  currentProducts.forEach((product) => {
+    const productCard = document.createElement("div");
+    productCard.classList.add("product-card");
 
-      filteredProducts.forEach((product) => {
-        const productCard = document.createElement("div");
-        productCard.classList.add("product-card");
+    productCard.innerHTML = `
+      <a href="${product.link}"><img src="${product.imgSrc}" alt="${product.name}"></a>
+      <h3><a href="${product.link}">${product.name}</a></h3>
+      <p>${product.price}</p>
+    `;
+    productGrid.appendChild(productCard);
+  });
+}
 
-        productCard.innerHTML = `
-          <a href="${product.link}"><img src="${product.imgSrc}" alt="${product.name}"></a>
-          <h3><a href="${product.link}">${product.name}</a></h3>
-          <p>${product.price}</p>
-        `;
-        productGrid.appendChild(productCard);
-      });
-    }
+// Initially call showProducts to display all products
+showProducts();
 
-    searchBtn.addEventListener("click", () => {
-      filterProducts(searchInput.value);
-    });
+// Search functionality (filtered products)
+function filterProducts(searchTerm) {
+  productGrid.innerHTML = "";  // Clear current products
+  const filteredProducts = allProducts.filter((product) =>
+    product.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
-    searchInput.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") {
-        filterProducts(searchInput.value);
-      }
-    });
+  if (filteredProducts.length === 0) {
+    productGrid.innerHTML = `<p>No products found</p>`;
+    return;
+  }
+
+  filteredProducts.forEach((product) => {
+    const productCard = document.createElement("div");
+    productCard.classList.add("product-card");
+
+    productCard.innerHTML = `
+      <a href="${product.link}"><img src="${product.imgSrc}" alt="${product.name}"></a>
+      <h3><a href="${product.link}">${product.name}</a></h3>
+      <p>${product.price}</p>
+    `;
+    productGrid.appendChild(productCard);
+  });
+}
+
+// Event listeners for search
+searchBtn.addEventListener("click", () => {
+  filterProducts(searchInput.value);
+});
+
+searchInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    filterProducts(searchInput.value);
+  }
+});
+
+// Function to clear search results and show all products
+function clearSearch() {
+  // Clear the search input field
+  searchInput.value = '';
+  
+  // Call the showProducts function to display all products
+  productGrid.innerHTML = ''; // Clear current products
+  showProducts(); // Re-display all products
+}
+
+// Add event listener to the clear button
+const clearBtn = document.getElementById('clear-btn');
+clearBtn.addEventListener('click', clearSearch);
+
   </script>
 
   <!-- FOOTER -->
