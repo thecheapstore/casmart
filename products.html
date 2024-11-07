@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -102,7 +103,7 @@
         grid-template-columns: 1fr;
         padding: 1rem;
       }
-      
+
       .product-card img {
         width: 80px;
         height: 80px;
@@ -140,13 +141,12 @@
           <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
 
           <a href="sign-up.html">
-          <p class="header-action-label">Sign in</p>
-        </a>
+            <p class="header-action-label">Sign in</p>
+          </a>
         </button>
 
         <button id="search-btn" class="search-btn" aria-label="Search">
-          <p class="header-action-label">Sign in</p>
-        </button>
+          <p class="header-action-label">Search</p>
         </button>
 
         <a href="cart.html">
@@ -156,14 +156,14 @@
             <div class="btn-badge green" aria-hidden="true">0</div>
           </button>
         </a>
-        
+
         <a href="wishlist.html">
           <button class="header-action-btn">
             <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
             <p class="header-action-label">Wishlist</p>
             <div class="btn-badge" aria-hidden="true">0</div>
           </button>
-        </a>        
+        </a>
 
       </div>
 
@@ -317,61 +317,49 @@
       },
       // Add more products here
     ];
-    // Display products based on pagination
-    function showProducts(pageNumber) {
-      const productsPerPage = 20; 
-      const startIndex = (pageNumber - 1) * productsPerPage;
-      const endIndex = startIndex + productsPerPage;
-      const productsToShow = allProducts.slice(startIndex, endIndex);
-      
-      productGrid.innerHTML = ''; // Clear previous products
 
-      productsToShow.forEach((product) => {
-        const productCard = document.createElement("div");
-        productCard.classList.add("product-card");
+    // Display products
+    function showProducts(page = 1) {
+      const productsPerPage = 4;
+      const start = (page - 1) * productsPerPage;
+      const end = start + productsPerPage;
 
-        productCard.innerHTML = `
-          <a href="${product.link}"><img src="${product.imgSrc}" alt="${product.name}"></a>
-          <h3><a href="${product.link}">${product.name}</a></h3>
-          <p>${product.price}</p>
+      productGrid.innerHTML = "";
+      const productsToDisplay = allProducts.slice(start, end);
+      productsToDisplay.forEach(product => {
+        productGrid.innerHTML += `
+          <div class="product-card">
+            <img src="${product.imgSrc}" alt="${product.name}">
+            <h3 class="product-name">${product.name}</h3>
+            <p class="product-price">${product.price}</p>
+            <a href="${product.link}" class="product-link">Buy Now</a>
+          </div>
         `;
-        productGrid.appendChild(productCard);
       });
     }
 
-    // Filter products based on search input
-    function filterProducts(searchTerm) {
-      const filteredProducts = allProducts.filter((product) =>
-        product.name.toLowerCase().includes(searchTerm.toLowerCase())
-      );
+    // Initial product display
+    showProducts();
 
-      productGrid.innerHTML = ''; // Clear current products
-
-      filteredProducts.forEach((product) => {
-        const productCard = document.createElement("div");
-        productCard.classList.add("product-card");
-
-        productCard.innerHTML = `
-          <a href="${product.link}"><img src="${product.imgSrc}" alt="${product.name}"></a>
-          <h3><a href="${product.link}">${product.name}</a></h3>
-          <p>${product.price}</p>
-        `;
-        productGrid.appendChild(productCard);
-      });
-    }
-
+    // Search functionality
     searchBtn.addEventListener("click", () => {
-      filterProducts(searchInput.value);
+      const query = searchInput.value.toLowerCase();
+      const filteredProducts = allProducts.filter(product =>
+        product.name.toLowerCase().includes(query)
+      );
+      productGrid.innerHTML = "";
+      filteredProducts.forEach(product => {
+        productGrid.innerHTML += `
+          <div class="product-card">
+            <img src="${product.imgSrc}" alt="${product.name}">
+            <h3 class="product-name">${product.name}</h3>
+            <p class="product-price">${product.price}</p>
+            <a href="${product.link}" class="product-link">Buy Now</a>
+          </div>
+        `;
+      });
     });
-
-    searchInput.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") {
-        filterProducts(searchInput.value);
-      }
-    });
-
-    // Show products on first page by default
-    window.onload = () => showProducts(1);
   </script>
 </body>
+
 </html>
