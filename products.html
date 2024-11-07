@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -94,8 +93,6 @@
       }
     }
   </style>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
@@ -227,112 +224,68 @@
         link: "/product/tramadol-100mg.html"
       },
       {
-        imgSrc: "https://tramadol100.us/wp-content/uploads/2023/08/Soma_350mg.jpg",
-        name: "Soma 350mg",
-        price: "$400.00 – $1,365.00",
-        link: "/product/soma-350.html"
-      },
-      {
-        imgSrc: "https://tramadol100.us/wp-content/uploads/2023/08/Soma_250mg.jpg",
-        name: "Soma 250mg",
-        price: "$375.00 – $1,085.00",
-        link: "/product/soma-250.html"
-      },
-      {
-        imgSrc: "https://tramadol100.us/wp-content/uploads/2023/08/Oxycontin_OP_30mg.jpg",
-        name: "Oxycontin OP 30Mg",
-        price: "$289.00 – $900.00",
-        link: "/product/oxycontin-op-30.html"
-      },
-      {
-        imgSrc: "https://tramadol100.us/wp-content/uploads/2023/08/Oxycontin_OP_80mg.jpg",
-        name: "Oxycontin OP 80Mg",
-        price: "$400.00 – $1,100.00",
-        link: "/product/oxycontin-op-80.html"
-      },
-      {
-        imgSrc: "https://tramadol100.us/wp-content/uploads/2023/08/Oxycontin_OP6_0mg.jpg",
-        name: "Oxycontin OP 60Mg",
-        price: "$400.00 – $1,090.00",
-        link: "/product/oxycontin-op-60.html"
-      },
-      {
-        imgSrc: "https://tramadol100.us/wp-content/uploads/2023/08/Oxycontin_40mg.jpg",
-        name: "Oxycontin OP 40Mg",
-        price: "$380.00 – $998.00",
-        link: "/product/oxycontin-op-40.html"
-      },
-      // Add more products here
+        imgSrc: "https://tramadol100.us/wp-content/uploads/2023/08/Soma_350mg_tablets.jpg",
+        name: "Tramadol 300mg",
+        price: "$1,000.00 – $3,000.00",
+        link: "/product/tramadol-300mg.html"
+      }
     ];
 
-    // On page load, display first set of products
-  window.onload = () => showProducts(1);
+    // Display products based on pagination
+    function showProducts(pageNumber) {
+      const productsPerPage = 20; 
+      const startIndex = (pageNumber - 1) * productsPerPage;
+      const endIndex = startIndex + productsPerPage;
+      const productsToShow = allProducts.slice(startIndex, endIndex);
+      
+      productGrid.innerHTML = ''; // Clear previous products
 
-// Show products based on page number
-function showProducts(pageNumber) {
-  const productsPerPage = 5;
-  const startIndex = (pageNumber - 1) * productsPerPage;
-  const endIndex = startIndex + productsPerPage;
-  const productsToShow = allProducts.slice(startIndex, endIndex);
-  
-  // Clear the grid
-  productGrid.innerHTML = '';
+      productsToShow.forEach((product) => {
+        const productCard = document.createElement("div");
+        productCard.classList.add("product-card");
 
-  // Add the products to the grid
-  productsToShow.forEach(product => {
-    const productCard = document.createElement("div");
-    productCard.classList.add("product-card");
+        productCard.innerHTML = `
+          <a href="${product.link}"><img src="${product.imgSrc}" alt="${product.name}"></a>
+          <h3><a href="${product.link}">${product.name}</a></h3>
+          <p>${product.price}</p>
+        `;
+        productGrid.appendChild(productCard);
+      });
+    }
 
-    productCard.innerHTML = `
-      <a href="${product.link}"><img src="${product.imgSrc}" alt="${product.name}"></a>
-      <h3><a href="${product.link}">${product.name}</a></h3>
-      <p>${product.price}</p>
-    `;
-    productGrid.appendChild(productCard);
-  });
-}
+    // Filter products based on search input
+    function filterProducts(searchTerm) {
+      const filteredProducts = allProducts.filter((product) =>
+        product.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
 
-// Filter products based on search term
-function filterProducts(searchTerm) {
-  productGrid.innerHTML = "";  // Clear current products
-  const filteredProducts = allProducts.filter((product) =>
-    product.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+      productGrid.innerHTML = ''; // Clear current products
 
-  if (filteredProducts.length === 0) {
-    productGrid.innerHTML = `<p>No products found</p>`;
-    return;
-  }
+      filteredProducts.forEach((product) => {
+        const productCard = document.createElement("div");
+        productCard.classList.add("product-card");
 
-  filteredProducts.forEach((product) => {
-    const productCard = document.createElement("div");
-    productCard.classList.add("product-card");
+        productCard.innerHTML = `
+          <a href="${product.link}"><img src="${product.imgSrc}" alt="${product.name}"></a>
+          <h3><a href="${product.link}">${product.name}</a></h3>
+          <p>${product.price}</p>
+        `;
+        productGrid.appendChild(productCard);
+      });
+    }
 
-    productCard.innerHTML = `
-      <a href="${product.link}"><img src="${product.imgSrc}" alt="${product.name}"></a>
-      <h3><a href="${product.link}">${product.name}</a></h3>
-      <p>${product.price}</p>
-    `;
-    productGrid.appendChild(productCard);
-  });
-}
+    searchBtn.addEventListener("click", () => {
+      filterProducts(searchInput.value);
+    });
 
-searchBtn.addEventListener("click", () => {
-  filterProducts(searchInput.value);
-});
+    searchInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        filterProducts(searchInput.value);
+      }
+    });
 
-searchInput.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") {
-    filterProducts(searchInput.value);
-  }
-});
+    // Show products on first page by default
+    window.onload = () => showProducts(1);
   </script>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p class="copyright">
-      &copy; 2024 <a href="index.html">Opti Pharmacy</a>. All Rights Reserved
-    </p>
-  </footer>
 </body>
 </html>
