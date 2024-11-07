@@ -103,7 +103,16 @@
         height: 80px;
       }
     }
+    @media (max-width: 768px) {
+  .header-action-btn {
+    z-index: 10; /* Make sure it appears on top */
+    position: relative; /* Ensure proper layering */
+  }
+}
+
   </style>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
@@ -331,6 +340,77 @@ function filterProducts(searchTerm) {
 
 // Initially show all products (if no search term)
 document.addEventListener("DOMContentLoaded", () => showProducts(1));
+
+// Mobile Menu Toggle
+const navOpenBtn = document.querySelector("[data-nav-open-btn]");
+const navCloseBtn = document.querySelector("[data-nav-close-btn]");
+const overlay = document.querySelector("[data-overlay]");
+const navbar = document.querySelector("[data-navbar]");
+
+// Open mobile menu
+navOpenBtn.addEventListener("click", () => {
+  navbar.classList.add("open");
+  overlay.classList.add("active");
+});
+
+// Close mobile menu
+navCloseBtn.addEventListener("click", () => {
+  navbar.classList.remove("open");
+  overlay.classList.remove("active");
+});
+
+// Close overlay on outside click
+overlay.addEventListener("click", () => {
+  navbar.classList.remove("open");
+  overlay.classList.remove("active");
+});
+
+// Search Functionality
+const searchBtn = document.getElementById("search-btn");
+const searchInput = document.getElementById("search-input");
+
+if (searchBtn && searchInput) {
+  searchBtn.addEventListener("click", function () {
+    const searchTerm = searchInput.value.toLowerCase();
+    filterProducts(searchTerm);
+  });
+
+  searchInput.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      const searchTerm = e.target.value.toLowerCase();
+      filterProducts(searchTerm);
+    }
+  });
+}
+
+// Example filterProducts function
+function filterProducts(searchTerm) {
+  const productGrid = document.getElementById("product-grid");
+  productGrid.innerHTML = ""; // Clear existing products
+
+  // Sample product data; replace with actual product data array
+  const products = allProducts.filter(product =>
+    product.name.toLowerCase().includes(searchTerm)
+  );
+
+  if (products.length === 0) {
+    productGrid.innerHTML = "<p>No products found</p>";
+    return;
+  }
+
+  products.forEach(product => {
+    const productCard = document.createElement("div");
+    productCard.classList.add("product-card");
+
+    productCard.innerHTML = `
+      <a href="${product.link}"><img src="${product.imgSrc}" alt="${product.name}"></a>
+      <h3><a href="${product.link}">${product.name}</a></h3>
+      <p>${product.price}</p>
+    `;
+    
+    productGrid.appendChild(productCard);
+  });
+}
 
   </script>
 
