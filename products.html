@@ -108,7 +108,6 @@
         <button id="search-btn" class="search-btn" aria-label="Search">
           <ion-icon name="search-outline"></ion-icon>
         </button>
-        <button id="clear-btn" class="clear-btn">Clear Search</button>
       </div>
 
       <a href="index.html" class="logo">
@@ -335,11 +334,6 @@ function clearSearch() {
   productGrid.innerHTML = ''; // Clear current products
   showProducts(); // Re-display all products
 }
-
-// Add event listener to the clear button
-const clearBtn = document.getElementById('clear-btn');
-clearBtn.addEventListener('click', clearSearch);
-
   </script>
 
   <!-- FOOTER -->
