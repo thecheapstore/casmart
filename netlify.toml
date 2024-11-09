@@ -1,7 +1,0 @@
-[[edge_functions]]
-  path = "/*"
-  function = "restrict-us/"
-
-  <---
-  remove / above to access site in us
-  ---> 
