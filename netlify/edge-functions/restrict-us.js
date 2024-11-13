@@ -1,15 +1,17 @@
 export default async (request, context) => {
-    // Retrieve the country code from the CF-IPCountry header
-    const country = request.headers.get('cf-ipcountry');
-    
-    // If the user is not from the US, return a 403 forbidden response
-    if (country !== 'US') {
+  // Retrieve the country code using context.geo for more accurate geolocation
+  const country = context.geo?.country?.code || request.headers.get('cf-ipcountry');
+  
+  // Log the country code for debugging
+  console.log('Country code detected:', country);
+  
+  // If the country code is not 'US', block access
+  if (country !== 'US') {
       return new Response('Access Denied. This site is only available in the US.', {
-        status: 403,
+          status: 403,
       });
-    }
+  }
   
-    // If the user is from the US, return the request to proceed
-    return await context.next();
-  };
-  
+  // Allow access for US users
+  return await context.next();
+};
