@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FRPXPXX93V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FRPXPXX93V');
+</script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opti Pharmacy - Xanar XR 3mg</title>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml">
+
+  <!-- custom css link -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- google font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Product page specific styling */
+    .product-container {
+      display: flex;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      max-width: 800px;
+      width: 100%;
+      margin: 2rem auto;
+      gap: 2rem;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .product-details h1 {
+      font-size: 1.8rem;
+      margin: 0;
+      color: #333;
+    }
+
+    .product-power {
+      font-size: 1rem;
+      color: #666;
+      margin-top: 0.5rem;
+    }
+
+    .dropdown-container {
+      margin: 1rem 0;
+    }
+
+    .package-select {
+      padding: 0.5rem;
+      font-size: 1rem;
+      width: 100%;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      outline: none;
+    }
+
+    .product-price {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #333;
+      margin: 1rem 0;
+    }
+
+    .order-button {
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .order-button:hover {
+      background-color: #45a049;
+    }
+
+    .meta-info {
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.6;
+      margin-top: 1rem;
+    }
+
+    .additional-info h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+
+    .additional-info p {
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.6;
+    }
+  </style>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <div class="overlay" data-overlay></div>
+      <div class="header-search">
+        <input type="search" id="search-input" name="search" placeholder="Search Product..." class="input-field">
+        <button id="search-btn" class="search-btn" aria-label="Search">
+          <ion-icon name="search-outline"></ion-icon>
+        </button>
+      </div>
+
+      <a href="/index.html" class="logo">
+        <img src="/assets/images/Opti.png" alt="OptiPharmacy logo" width="130" height="31">
+      </a>
+
+      <div class="header-actions">
+        <button class="header-action-btn">
+          <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+          <a href="/sign-up.html"><p class="header-action-label">Sign in</p></a>
+        </button>
+
+        <a href="/cart.html">
+          <button class="header-action-btn">
+            <ion-icon name="cart-outline" aria-hidden="true"></ion-icon>
+            <p class="header-action-label">Cart</p>
+            <div class="btn-badge green" aria-hidden="true">0</div>
+          </button>
+        </a>
+        
+        <a href="/wishlist.html">
+          <button class="header-action-btn">
+            <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+            <p class="header-action-label">Wishlist</p>
+            <div class="btn-badge" aria-hidden="true">0</div>
+          </button>
+        </a>        
+      </div>
+
+      <button class="nav-open-btn" data-nav-open-btn aria-label="Open Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="navbar" data-navbar>
+        <div class="navbar-top">
+          <a href="/index.html" class="logo">
+            <img src="/assets/images/Opti.png" alt="OptiPharmacy logo" width="130" height="31">
+          </a>
+          <button class="nav-close-btn" data-nav-close-btn aria-label="Close Menu">
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+        </div>
+        <ul class="navbar-list">
+          <li><a href="/index.html" class="navbar-link">Home</a></li>
+          <li><a href="/products.html" class="navbar-link">Shop</a></li>
+          <li><a href="/about.html" class="navbar-link">About</a></li>
+          <li><a href="https://optipharmacyblog.netlify.app/" class="navbar-link">Blog</a></li>
+          <li><a href="/contact-us.html" class="navbar-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PRODUCT SECTION -->
+  <div class="product-container">
+    <div class="product-image">
+      <img src="https://tramadol100.us/wp-content/uploads/2023/08/Xanax_XR_3mg.jpg" alt="Medicine Image">
+    </div>
+
+    <div class="product-details">
+      <h1>Xanar XR </h1>
+      <p class="product-power">3mg</p>
+
+      <!-- Package Dropdown -->
+      <div class="dropdown-container">
+        <label for="package-select">Select Package:</label>
+        <select id="package-select" class="package-select">
+          <option value="60">60 Pills</option>
+          <option value="90">90 Pills</option>
+          <option value="120">120 Pills</option>
+          <option value="180">180 Pills</option>
+          <option value="240">240 Pills</option>
+          <option value="300">300 Pills</option>
+          <option value="360">360 Pills</option>
+        </select>
+      </div>
+
+      <p class="product-price" id="product-price">$355.00 – $1,055.00</p>
+
+      <!-- Place Order Button -->
+      <a href="/place-order.html" class="order-button">Place Order</a>
+
+      <!-- Meta Information -->
+<div class="meta-info">
+  <p><strong>Category:</strong> Buy Xanax XR 3mg Online</p>
+  <p><strong>Tags:</strong> Buy Xanax XR 3mg, Buy Xanax XR 3mg Cheap Price, Buy Xanax XR 3mg Online, Buy Xanax XR 3mg Online Delivery, Buy Xanax XR 3mg Overnight Delivery</p>
+</div>
+
+<!-- Additional Information -->
+<div class="additional-info">
+  <h3>Uses of Xanax XR 3mg</h3>
+  <p>Xanax XR 3mg is an extended-release medication prescribed for the management of anxiety disorders and panic disorders. As a benzodiazepine, it works by enhancing the activity of GABA, a natural chemical in the brain, to produce a calming effect. The extended-release formulation provides longer-lasting relief compared to immediate-release forms, helping to maintain consistent symptom control throughout the day.</p>
+  
+  <p>Xanax XR 3mg is typically taken once daily, and it is designed for individuals who require sustained symptom relief. It should be swallowed whole and not crushed, broken, or chewed, as this can interfere with its extended-release properties. This medication is most effective when used as part of a comprehensive treatment plan that may include therapy and lifestyle modifications.</p>
+  
+  <p>Common side effects include drowsiness, dizziness, and fatigue. It is important to avoid activities requiring full alertness, such as driving, until you understand how the medication affects you. Xanax XR 3mg should be used under strict medical supervision to avoid potential dependency or misuse, especially with prolonged use.</p>
+  
+  <h3>Precautions</h3>
+  <p>Before starting Xanax XR 3mg, inform your doctor about any history of liver or kidney disease, breathing problems, depression, or substance abuse. Avoid alcohol while taking Xanax XR, as it can increase sedation and the risk of serious side effects. Pregnant or breastfeeding women should not take Xanax XR 3mg due to potential risks to the baby.</p>
+  
+  <p>Do not discontinue Xanax XR 3mg abruptly, as this can lead to withdrawal symptoms. Your doctor may gradually reduce the dosage to prevent discomfort. Use this medication only as directed, and keep it stored securely to prevent misuse by others. Always consult your healthcare provider for guidance tailored to your specific condition and needs.</p>
+</div>  
+</div>
+</div>
+  
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    const packageSelect = document.getElementById('package-select');
+    const priceDisplay = document.getElementById('product-price');
+
+    const priceMapping = {
+      '60': 355,   
+      '90': 400,
+      '120': 460,
+      '180': 600,
+      '240': 769,
+      '300': 900,
+      '360': 1055,
+};
+
+    packageSelect.addEventListener('change', function () {
+      const selectedValue = this.value;
+      const price = priceMapping[selectedValue];
+      priceDisplay.textContent = `$${price}.00`;
+    });
+  </script>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p class="copyright">
+      &copy; 2024 <a href="/index.html">Opti Pharmacy</a>. All Rights Reserved
+    </p>
+  </footer>
+
+</body>
+
+</html>
